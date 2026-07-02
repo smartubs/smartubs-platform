@@ -1,0 +1,95 @@
+/* ==========================================================================
+   SmartUBS — Base
+   Reset simples + tipografia + elementos genéricos (botões, campos).
+   ========================================================================== */
+*{box-sizing:border-box;}
+html{font-size:calc(16px * var(--font-scale));} /* respeita o A+/A- de acessibilidade */
+html,body{margin:0;padding:0;}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  color:var(--ink);
+  background:var(--surface);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,.display{font-family:'Sora',sans-serif;}
+.mono{font-family:'JetBrains Mono',monospace;}
+button{font-family:inherit;cursor:pointer;}
+input,select,textarea{font-family:inherit;}
+img{max-width:100%;display:block;}
+::selection{background:var(--blue);color:var(--white);}
+
+/* Foco visível — obrigatório para acessibilidade via teclado */
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible{
+  outline:3px solid var(--blue);
+  outline-offset:2px;
+}
+
+/* Página renderizada pelo router */
+.page{
+  min-height:100vh;
+  width:100%;
+  animation:pageIn .45s var(--ease);
+}
+@keyframes pageIn{
+  from{opacity:0;transform:translateY(14px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* ---------- Botões ---------- */
+.btn{
+  border:none;border-radius:100px;font-weight:600;letter-spacing:-.005em;
+  transition:transform .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease);
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+}
+.btn:active{transform:scale(.97);}
+.btn-primary{
+  background:linear-gradient(135deg,var(--blue) 0%, #0068DB 100%);
+  color:var(--white);
+  padding:18px 40px;font-size:1rem;
+  box-shadow:var(--shadow-blue);
+}
+.btn-primary:hover{box-shadow:0 16px 40px -8px rgba(0,87,184,0.4);transform:translateY(-1px);}
+.btn-secondary{
+  background:var(--white);color:var(--ink);
+  border:1px solid var(--border);
+  padding:14px 28px;font-size:.9rem;
+  box-shadow:var(--shadow-sm);
+}
+.btn-secondary:hover{border-color:var(--blue);color:var(--blue);}
+.btn-ghost{
+  background:transparent;color:var(--ink-soft);
+  border:none;
+  padding:10px 16px;font-size:.9rem;font-weight:500;
+}
+.btn-ghost:hover{color:var(--ink);}
+.btn-block{width:100%;}
+.btn-lg{padding:18px 32px;font-size:1rem;}
+.btn:disabled{opacity:.4;pointer-events:none;}
+
+/* ---------- Campos de formulário ---------- */
+.field{margin-bottom:18px;position:relative;}
+.field label{
+  display:block;font-size:.78rem;font-weight:600;color:var(--ink-soft);
+  margin-bottom:7px;letter-spacing:.01em;
+}
+.field input, .field select, .field textarea{
+  width:100%;padding:14px 16px;border-radius:var(--radius-sm);
+  border:1.5px solid var(--border);background:var(--white);
+  font-size:.94rem;color:var(--ink);outline:none;
+  transition:border-color .18s var(--ease), box-shadow .18s var(--ease);
+}
+.field input:focus, .field select:focus, .field textarea:focus{
+  border-color:var(--blue);box-shadow:0 0 0 4px var(--blue-light);
+}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.field-hint{font-size:.75rem;color:var(--ink-faint);margin-top:5px;}
+.field-error{font-size:.75rem;color:var(--red);margin-top:5px;display:none;}
+.field.has-error input{border-color:var(--red);}
+.field.has-error .field-error{display:block;}
+
+.footnote{
+  margin-top:44px;font-size:.75rem;color:var(--ink-faint);line-height:1.6;
+  max-width:380px;margin-left:auto;margin-right:auto;
+}

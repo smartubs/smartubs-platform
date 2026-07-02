@@ -1,0 +1,59 @@
+/* ==========================================================================
+   SmartUBS — Design Tokens
+   Identidade visual: azul institucional, verde, branco, estilo premium
+   (Apple / Stripe / Notion): muito espaço em branco, cantos arredondados,
+   sombras discretas, tipografia moderna.
+   ========================================================================== */
+:root{
+  /* Cores de marca */
+  --blue:#0057B8;
+  --blue-dark:#003D82;
+  --blue-light:#EAF2FD;
+  --green:#00A86B;
+  --green-dark:#00875A;
+  --green-light:#E5F8F0;
+
+  /* Cores de status (classificação de risco) */
+  --amber:#F5A623;
+  --amber-light:#FFF6E1;
+  --amber-text:#B7791F;
+  --red:#E5484D;
+  --red-light:#FDEAEB;
+
+  /* Neutros */
+  --ink:#0E1420;
+  --ink-soft:#5B6472;
+  --ink-faint:#8993A3;
+  --white:#FFFFFF;
+  --surface:#F5F8FC;
+  --surface-2:#EEF3F9;
+  --border:rgba(14,20,32,0.08);
+  --border-soft:rgba(14,20,32,0.05);
+
+  /* Sombras */
+  --shadow-sm:0 1px 2px rgba(14,20,32,0.04), 0 1px 1px rgba(14,20,32,0.03);
+  --shadow-md:0 8px 24px -8px rgba(14,20,32,0.12), 0 2px 8px -2px rgba(14,20,32,0.06);
+  --shadow-lg:0 24px 64px -16px rgba(14,20,32,0.18), 0 8px 24px -8px rgba(14,20,32,0.08);
+  --shadow-blue:0 12px 32px -8px rgba(0,87,184,0.28);
+
+  /* Raio de borda */
+  --radius-sm:10px;
+  --radius-md:16px;
+  --radius-lg:24px;
+  --radius-xl:32px;
+
+  /* Movimento */
+  --ease:cubic-bezier(.22,1,.36,1);
+
+  /* Tipografia base — pode ser alterada pela barra de acessibilidade (A+/A-) */
+  --font-scale:1;
+}
+
+/* Alto contraste (alternado via botão ◐ na barra de acessibilidade) */
+:root.high-contrast{
+  --ink:#000000;
+  --ink-soft:#1a1a1a;
+  --border:rgba(0,0,0,0.35);
+  --surface:#FFFFFF;
+  --blue:#0046a0;
+}

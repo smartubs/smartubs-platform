@@ -1,0 +1,10 @@
+{
+  "name": "smartubs-mvp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SmartUBS — Sistema Operacional Inteligente para Atenção Primária à Saúde (MVP em HTML/CSS/JS puro).",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "license": "UNLICENSED"
+}

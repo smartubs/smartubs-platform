@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartUBS — Sistema Operacional Inteligente para Atenção Primária</title>
+<meta name="description" content="SmartUBS organiza o fluxo de atendimento em Unidades Básicas de Saúde. Não realiza diagnóstico médico.">
+
+<!-- Fontes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<!-- Estilos (ordem importa: tokens -> base -> layout -> componentes -> acessibilidade) -->
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/accessibility.css">
+</head>
+<body>
+
+  <!-- Toda a interface é renderizada aqui pelo router (js/router.js) -->
+  <div id="app" role="main"></div>
+
+  <!-- Barra de acessibilidade fixa: aumentar fonte, alto contraste -->
+  <div id="a11y-bar" class="a11y-bar" aria-label="Ferramentas de acessibilidade">
+    <button id="a11y-decrease" type="button" aria-label="Diminuir tamanho do texto">A-</button>
+    <button id="a11y-increase" type="button" aria-label="Aumentar tamanho do texto">A+</button>
+    <button id="a11y-contrast" type="button" aria-label="Alternar alto contraste">◐</button>
+  </div>
+
+  <!-- Ponto de entrada da aplicação (ES Modules nativos, sem bundler) -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
